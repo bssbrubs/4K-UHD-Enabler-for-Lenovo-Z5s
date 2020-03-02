@@ -1,0 +1,5 @@
+ui_print("Video Fix");
+run_program("/sbin/busybox", "mount", "/vendor");
+package_extract_dir("vendor", "/vendor");
+set_perm_recursive(0, 0, 0755, 0644, "/vendor/etc");
+unmount("/vendor");
